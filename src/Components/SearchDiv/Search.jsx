@@ -7,6 +7,15 @@ const Search = () => {
   const [job, setJob] = useState('');
   const [company, setCompany] = useState('');
   const [location, setLocation] = useState('');
+  
+  // Clear All function
+  const handleClearAll = () => {
+    console.log("Clear All triggered");
+    setJob('');
+    setCompany('');
+    setLocation('');
+    console.log("Job:", job, "Company:", company, "Location:", location);
+  };
 
   return (
     <div className='searchDiv grid gap-10 bg-greyIsh rounded-[10px] p-[3rem]'>
@@ -97,6 +106,14 @@ const Search = () => {
             <option value="">Advocate</option>
           </select>
         </div>
+
+        {/* Clear All */}
+        <span 
+          className='text-[#a1a1a1] cursor-pointer hover:underline'
+          onClick={handleClearAll}
+        >
+          Clear All
+        </span>
       </div>
     </div>
   );
